@@ -8,6 +8,4 @@ if (!supabaseUrl) {
     console.warn("⚠️ Advertencia: VITE_SUPABASE_URL no está definida. Verifica tu archivo .env.local y reinicia el servidor.");
 }
 
-export const supabase = (supabaseUrl && supabaseAnonKey)
-    ? createClient(supabaseUrl, supabaseAnonKey)
-    : null;
+export const supabase = createClient(supabaseUrl || "", supabaseAnonKey || "");
